@@ -61,7 +61,8 @@ import matplotlib.pyplot as plt  # pip install matplotlib
 # # bg_image = Image.open(buf)
 
 # Open the image
-bg_image = Image.open("Econ2023/bg_image.png")
+# bg_image = Image.open("images/bg_image.png")
+bg_image = Image.open("images/icon_blue.png")
 scaleFactors = [100, 100, .1214, .775]
 
 
