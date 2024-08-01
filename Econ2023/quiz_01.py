@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 from PIL import Image, UnidentifiedImageError
 import io
-
+import os
 # import pandas as pd  # pip install pandas
 import numpy as np  # pip install numpy
 from PIL import Image  # pip install pillow
@@ -59,7 +59,14 @@ import matplotlib.pyplot as plt  # pip install matplotlib
 # # plt.savefig(buf, format='png')
 # # buf.seek(0)
 # # bg_image = Image.open(buf)
-bg_image = Image.open("bg_image.PNG")
+# Get the directory of the current script
+script_dir = os.path.dirname(__file__)
+
+# Construct the full path to the image
+image_path = os.path.join(script_dir, "bg_image.PNG")
+
+# Open the image
+bg_image = Image.open(image_path)
 scaleFactors = [100, 100, .1214, .775]
 
 
