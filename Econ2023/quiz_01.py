@@ -62,7 +62,8 @@ import matplotlib.pyplot as plt  # pip install matplotlib
 
 # Open the image
 # bg_image = Image.open("images/bg_image.png")
-bg_image = Image.open("images/icon_blue.png")
+bg_image = Image.open("images/bg_image.png")
+# bg_image = st.sidebar.file_uploader("Background image:", type=["png", "jpg"])
 scaleFactors = [100, 100, .1214, .775]
 
 
@@ -94,7 +95,7 @@ def process_canvas():
         fill_color="rgba(255, 165, 0, 0.3)",
         stroke_width=stroke_width,
         stroke_color=stroke_color,
-        background_image=bg_image,
+        background_image=bg_image,  # None,  # bg_image,
         update_streamlit=realtime_update,
         width=canvas_width,
         height=canvas_height,
@@ -129,7 +130,7 @@ def process_canvas():
             file_name='image01.png',
             mime='image/png'
         )
-        return base64_combined
+        # return base64_combined
 
 
 process_canvas()
