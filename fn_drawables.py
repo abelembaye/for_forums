@@ -11,56 +11,8 @@ import base64
 import seaborn as sns  # pip install seaborn
 import matplotlib.pyplot as plt  # pip install matplotlib
 
-x_lim = [0, 100]
-y_lim = [0, 100]
 
-xsteps = (x_lim[1]-x_lim[0])/10
-ysteps = (y_lim[1]-y_lim[0])/10
-
-# constant that are mentioned in
-scaleFactors = [x_lim[1], y_lim[1], .1214, .775]
-
-# Create a figure and axis
-fig, ax = plt.subplots()
-
-# Set the limits of the plot
-ax.set_xlim([x_lim[0], x_lim[1]])
-ax.set_ylim([y_lim[0], y_lim[1]])
-
-# Set the labels of the plot
-ax.set_xlabel('Quantity, Q')
-ax.set_ylabel('Price, P')
-
-# Specify the locations of the grid lines
-# Grid lines from 0 to 10 with a step of z
-x_ticks = np.arange(x_lim[0], x_lim[1] + 1, xsteps)
-# Grid lines from 0 to 10 with a step of z
-y_ticks = np.arange(y_lim[0], y_lim[1] + 1, ysteps)
-
-ax.set_xticks(x_ticks)
-ax.set_yticks(y_ticks)
-
-# Draw a grid
-ax.grid(True)
-
-# Use streamlit to display the plot
-# st.pyplot(fig)
-
-
-# def process_canvas():
-#     st.write("Hi")
-
-
-# # Convert the matplotlib figure to a PIL Image
-# buf = io.BytesIO()
-# plt.savefig(buf, format='png')
-# buf.seek(0)
-# bg_image = Image.open(buf)
-bg_image = Image.open("bg_image.PNG")
-# st.image(bg_image)
-
-
-def process_canvas():
+def process_canvas(bg_image, scaleFactors):
     canvas_width = 600
     canvas_height = 500
 
@@ -88,7 +40,7 @@ def process_canvas():
         fill_color="rgba(255, 165, 0, 0.3)",
         stroke_width=stroke_width,
         stroke_color=stroke_color,
-        background_image=bg_image,
+        background_image=bg_image,  # None,  # bg_image,
         update_streamlit=realtime_update,
         width=canvas_width,
         height=canvas_height,
@@ -123,4 +75,4 @@ def process_canvas():
             file_name='image01.png',
             mime='image/png'
         )
-        return base64_combined
+        # return base64_combined
