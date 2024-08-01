@@ -61,7 +61,12 @@ import matplotlib.pyplot as plt  # pip install matplotlib
 # st.image(bg_image, caption="Background Image")
 
 # Open and use image from folder
-bg_image = Image.open("images/bg_image.png")
+if 'bg_image' not in st.session_state:
+    st.session_state.bg_image = Image.open("images/bg_image.png")
+
+bg_image = st.session_state.bg_image
+# bg_image = Image.open("images/bg_image.png")
+
 # bg_image = st.sidebar.file_uploader("Background image:", type=["png", "jpg"])
 # st.image(bg_image, caption="Background Image")
 scaleFactors = [100, 100, .1214, .775]
