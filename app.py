@@ -1,8 +1,7 @@
 
-# conda activate cenv4test
+# conda activate stvenv311
 # streamlit run app.py
-# When pushing to github, change the incloud=True, if packages updated run "pip freeze > requirement.txt "
-# # If not installed, tar.gz file install from GITHUB: pip install https://github.com/abelembaye/drawable_package/raw/master/streamlit-drawable-canvas-0.9.3.0.tar.gz  # just try to see the URL of the .tar.gz file as outsider and add /raw/ before the branch name, tricky
+
 import hmac
 import streamlit as st
 # from helper_fns import check_password
@@ -18,8 +17,6 @@ def login():
     # course is take from this selection; course can be replaced by password
     course = st.selectbox("Choose your Course", COURSES)
     # lastname = st.text_input("Enter your last name")
-    # wkd = st.text_input(
-    #     r"Please your enter your working directory so that your work is saved and uploaded when you comeback to the same assessment. mine is for example, C:\\Users\\aembaye\\Documents")
     if st.button("Log in"):
         st.session_state.course = course
         st.rerun()
