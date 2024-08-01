@@ -59,14 +59,9 @@ import matplotlib.pyplot as plt  # pip install matplotlib
 # # plt.savefig(buf, format='png')
 # # buf.seek(0)
 # # bg_image = Image.open(buf)
-# Get the directory of the current script
-script_dir = os.path.dirname(__file__)
-
-# Construct the full path to the image
-image_path = os.path.join(script_dir, "bg_image.PNG")
 
 # Open the image
-bg_image = Image.open(image_path)
+bg_image = Image.open("Econ2023/bg_image.png")
 scaleFactors = [100, 100, .1214, .775]
 
 
