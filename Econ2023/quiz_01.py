@@ -14,7 +14,7 @@ import base64
 import seaborn as sns  # pip install seaborn
 import matplotlib.pyplot as plt  # pip install matplotlib
 
-# ## Fir use background image from directory and later from a plot object:
+# # Fir use background image from directory and later from a plot object:
 # x_lim = [0, 100]
 # y_lim = [0, 100]
 
@@ -50,20 +50,19 @@ import matplotlib.pyplot as plt  # pip install matplotlib
 # # st.pyplot(fig)
 
 
-# # def process_canvas():
-# #     st.write("Hi")
+# # Convert the matplotlib figure to a PIL Image
+# buf = io.BytesIO()
+# plt.savefig(buf, format='png')
+# buf.seek(0)
+# bg_image = Image.open(buf)
 
+# Debug: Check if the image is loaded correctly
+# st.image(bg_image, caption="Background Image")
 
-# # # Convert the matplotlib figure to a PIL Image
-# # buf = io.BytesIO()
-# # plt.savefig(buf, format='png')
-# # buf.seek(0)
-# # bg_image = Image.open(buf)
-
-# Open the image
-# bg_image = Image.open("images/bg_image.png")
+# Open and use image from folder
 bg_image = Image.open("images/bg_image.png")
 # bg_image = st.sidebar.file_uploader("Background image:", type=["png", "jpg"])
+st.image(bg_image, caption="Background Image")
 scaleFactors = [100, 100, .1214, .775]
 
 
