@@ -67,7 +67,7 @@ bg_image = Image.open("images/bg_image.png")
 scaleFactors = [100, 100, .1214, .775]
 
 
-def process_canvas(bg_image, scaleFactors):
+def process_canvas():
     canvas_width = 600
     canvas_height = 500
 
