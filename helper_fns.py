@@ -81,7 +81,7 @@ def process_canvas(bg_image):
         fill_color="rgba(255, 165, 0, 0.3)",
         stroke_width=stroke_width,
         stroke_color=stroke_color,
-        update_streamlit=False,  # realtime_update,
+        update_streamlit=realtime_update,  # False
         width=canvas_width,
         height=canvas_height,
         drawing_mode=drawing_mode,
